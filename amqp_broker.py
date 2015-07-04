@@ -1,6 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/python2.7
+#-*- coding: utf-8 -*-
 
-# VERSION 1.0.0
+# VERSION 1.1.0
 
 import pika
 import uuid
@@ -44,6 +45,8 @@ class Server(object):
         self.channel.queue_declare(queue=self.key)
 
     def on_request(self, ch, method, props, body):
+        # TODO
+        # More tweakable.
         n = int(body)
 
         print " [.] f(%s)"  % (n,)
@@ -60,5 +63,5 @@ class Server(object):
         self.channel.basic_qos(prefetch_count=1)
         self.channel.basic_consume(self.on_request, queue=self.key)
 
-        print " [x] Demarrage du serveur."
+        print " [x] Démarrage du serveur."
         self.channel.start_consuming()
