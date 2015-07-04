@@ -25,11 +25,9 @@ sudo apt-get install python-pika
 
 # TODO
 
-  - Mettre les exemples dans un dossier à part
   - Faire une vraie doc
   - Traduire en anglais
   - Faire un ou deux autres exemples + Trouver un vrai usage
-  - Trouver un moyen de mettre la librairie dans le PATH (Bash ? deb ?)
   - Pouvoir modifier toutes les variables dans le client/serveur
   - Comprendre toutes les variables...
   - Pouvoir choisir l'entrée de son script
