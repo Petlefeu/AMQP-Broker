@@ -14,6 +14,8 @@ sudo apt-get install python-pika
 
 # VERSION
 
+  - 1.2.0
+    * Add authentication
   - 1.1.1
     * Documentation
     * Ajout d'erreurs
