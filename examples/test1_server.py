@@ -1,11 +1,15 @@
 #!/usr/bin/env python
+#-*- coding: utf-8 -*-
+""" Example of an AMPQ Broker server """
 
-# VERSION 1.1.0
+# VERSION 1.1.1
 
 import amqp_broker
 
-def g(n):
-    return n*n
+def example_func(parameter):
+    """ This is an example function """
+    return parameter * parameter
 
-broker_server = amqp_broker.Server(g, server_host='127.0.0.1')
-broker_server.init()
+if __name__ == "__main__":
+    BROKER_SERVER = amqp_broker.Server(example_func, server_host='127.0.0.1')
+    BROKER_SERVER.init()

@@ -14,6 +14,9 @@ sudo apt-get install python-pika
 
 # VERSION
 
+  - 1.1.1
+    * Documentation
+    * Ajout d'erreurs
   - 1.1.0
     * Script configure.sh permettant de mettre le module à la racine
     * Réorganisation des dossiers
