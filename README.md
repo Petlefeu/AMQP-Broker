@@ -1,33 +1,33 @@
-## AMQP-Broker
+# AMQP-Broker
 
-# AMQP Node/Cluster configuration
+## AMQP Node/Cluster configuration
 
-<code bash>
+```bash
 sudo apt-get install rabbitmq-server
-</code>
+```
 
-Another way is to use Docker :
+Another way is to use **Docker** :
 
-<code bash>
+```bash
+# Pulling docker image from repo
 sudo docker pull bijukunjummen/rabbitmq-server
 
+# Clone the github project and start the cluster
 sudo git clone https://github.com/bijukunjummen/docker-rabbitmq-cluster
-
 cd docker-rabbitmq-cluster/cluster
-
 sudo docker-compose up -d
-</code>
+```
 
-# AMQP Client configuration
+## AMQP Client configuration
 
-<code bash>
+```bash
 sudo apt-get install python-pika
-</code>
+```
 
-# VERSION
+## VERSION
 
-  - 1.3.1
-    * Doc issues
+  - 1.3.2-1.3.1
+    * Doc fix
   - 1.3.0
     * New example added
     * English translation
@@ -47,13 +47,14 @@ sudo apt-get install python-pika
   - 1.0.0
     * Stable version of amqp-broker
 
-# TODO
+## TODO
 
   - Make a real documentation
   - More examples and real use-case
   - Possibility to change every variables on every sides
   - Understanding every variables...
 
-# SOURCES
+## SOURCES
 
 https://www.rabbitmq.com/tutorials/tutorial-six-python.html
+https://github.com/bijukunjummen/docker-rabbitmq-cluster
