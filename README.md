@@ -1,12 +1,21 @@
-# AMQP-Broker
+## AMQP-Broker
 
-# Configuration du Node AMQP
+# AMQP Node/Cluster configuration
 
 <code bash>
 sudo apt-get install rabbitmq-server
 </code>
 
-# Configuration des Clients AMQP
+Une autre approche est possible avec docker :
+
+<code bash>
+sudo docker pull bijukunjummen/rabbitmq-server
+sudo git clone https://github.com/bijukunjummen/docker-rabbitmq-cluster
+cd docker-rabbitmq-cluster/cluster
+sudo docker-compose up -d
+</code>
+
+# AMQP Client configuration
 
 <code bash>
 sudo apt-get install python-pika
@@ -14,28 +23,31 @@ sudo apt-get install python-pika
 
 # VERSION
 
+  - 1.3.0
+    * New example added
+    * English translation
+    * Correction to the code (allowing string)
+    * Add exception in test1 to cast string into integer
   - 1.2.0
     * Add authentication
   - 1.1.1
     * Documentation
-    * Ajout d'erreurs
+    * Add more understanding errors
   - 1.1.0
-    * Script configure.sh permettant de mettre le module à la racine
-    * Réorganisation des dossiers
-    * UTF-8 par défaut
+    * Add configure.sh, can move the library to the python path
+    * Change directories order
+    * UTF-8 by default
   - 1.0.1
-    * Maj doc
+    * Add documentation
   - 1.0.0
-    * Version stable de amqp-broker
+    * Stable version of amqp-broker
 
 # TODO
 
-  - Faire une vraie doc
-  - Traduire en anglais
-  - Faire un ou deux autres exemples + Trouver un vrai usage
-  - Pouvoir modifier toutes les variables dans le client/serveur
-  - Comprendre toutes les variables...
-  - Pouvoir choisir l'entrée de son script
+  - Make a real documentation
+  - More examples and real use-case
+  - Possibility to change every variables on every sides
+  - Understanding every variables...
 
 # SOURCES
 

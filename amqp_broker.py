@@ -3,7 +3,7 @@
 """ Main class of amqp_broker
 Client and Server """
 
-# VERSION 1.2.0
+# VERSION 1.3.0
 
 from uuid import uuid4
 import pika
@@ -44,7 +44,7 @@ class Client(object):
                                    body=str(parameter))
         while self.response is None:
             self.connection.process_data_events()
-        return int(self.response)
+        return self.response
 
 class Server(object):
     """ Class AMQP Broker Server """
@@ -61,12 +61,9 @@ class Server(object):
 
     def on_request(self, ch, method, props, body):
         """ Default method on_request from pika, but with some differences. """
-        # TODO
-        # More tweakable.
-        var = int(body)
 
-        print " [.] f(%s)"  % (var,)
-        response = self.func(var)
+        print " [x] Requested f(%s)" % body
+        response = self.func(body)
 
         ch.basic_publish(exchange='',
                          routing_key=props.reply_to,
@@ -80,10 +77,9 @@ class Server(object):
         self.channel.basic_qos(prefetch_count=1)
         self.channel.basic_consume(self.on_request, queue=self.key)
 
-        print " [x] Démarrage du serveur."
+        print " [x] Awaiting connections"
         self.channel.start_consuming()
 
 class AMQPException(Exception):
     """ Custom Exception """
     pass
-
