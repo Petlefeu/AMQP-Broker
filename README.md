@@ -6,12 +6,15 @@
 sudo apt-get install rabbitmq-server
 </code>
 
-Une autre approche est possible avec docker :
+Another way is to use Docker :
 
 <code bash>
 sudo docker pull bijukunjummen/rabbitmq-server
+
 sudo git clone https://github.com/bijukunjummen/docker-rabbitmq-cluster
+
 cd docker-rabbitmq-cluster/cluster
+
 sudo docker-compose up -d
 </code>
 
@@ -23,6 +26,8 @@ sudo apt-get install python-pika
 
 # VERSION
 
+  - 1.3.1
+    * Doc issues
   - 1.3.0
     * New example added
     * English translation
