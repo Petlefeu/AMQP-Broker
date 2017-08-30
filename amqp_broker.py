@@ -48,10 +48,12 @@ class Client(object):
 
 class Server(object):
     """ Class AMQP Broker Server """
-    def __init__(self, func, server_host='127.0.0.1', key='hello'):
+    def __init__(self, func, server_host='127.0.0.1', key='hello', user='guest', password='guest'):
+        credentials = pika.credentials.PlainCredentials(user, password)
         try:
             self.connection = pika.BlockingConnection(pika.ConnectionParameters(
-                host=server_host))
+                host=server_host,
+                credentials=credentials))
         except pika.exceptions.ConnectionClosed:
             raise AMQPException('Cannot communicate to AMQP server. Install the package or start the service.')
         self.key = key

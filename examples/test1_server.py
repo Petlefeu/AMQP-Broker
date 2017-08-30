@@ -16,5 +16,5 @@ def example_func(parameter):
     return result
 
 if __name__ == "__main__":
-    BROKER_SERVER = amqp_broker.Server(example_func, server_host='127.0.0.1')
+    BROKER_SERVER = amqp_broker.Server(example_func, server_host='127.0.0.1', user='admin', password='admin')
     BROKER_SERVER.init()

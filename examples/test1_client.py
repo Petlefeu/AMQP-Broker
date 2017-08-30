@@ -6,6 +6,6 @@
 
 import amqp_broker
 
-BROKER_CLIENT = amqp_broker.Client(server_host='127.0.0.1')
+BROKER_CLIENT = amqp_broker.Client(server_host='127.0.0.1', user='admin', password='admin')
 
 print " [.] %s" % BROKER_CLIENT.send(10)
