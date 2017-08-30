@@ -21,10 +21,12 @@ docker run -d --rm -e RABBITMQ_ENABLE_MANAGEMENT_PLUGIN=true -e RABBITMQ_USER=ad
 pip install -r requirements.txt
 
 # Import library
-./configure.sh
+sudo python setup.py install
 ```
 
 ## VERSION
+  - 1.4.1:
+    * Prepare repo for PyPi
   - 1.4:
     * Credentials in server side
     * New documentation
