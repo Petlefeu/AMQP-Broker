@@ -10,22 +10,25 @@ Another way is to use **Docker** :
 
 ```bash
 # Pulling docker image from repo
-sudo docker pull bijukunjummen/rabbitmq-server
+sudo docker pull smebberson/alpine-rabbitmq
 
-# Clone the github project and start the cluster
-sudo git clone https://github.com/bijukunjummen/docker-rabbitmq-cluster
-cd docker-rabbitmq-cluster/cluster
-sudo docker-compose up -d
+docker run -d --rm -e RABBITMQ_ENABLE_MANAGEMENT_PLUGIN=true -e RABBITMQ_USER=admin -e RABBITMQ_PASS=admin -e RABBITMQ_DEFAULT_VHOST=/ -p 5672:5672 -p 15672:15672 smebberson/alpine-rabbitmq
 ```
 
 ## AMQP Client configuration
 
 ```bash
-sudo apt-get install python-pika
+pip install -r requirements.txt
+
+# Import library
+./configure.sh
 ```
 
 ## VERSION
-
+  - 1.4:
+    * Credentials in server side
+    * New documentation
+    * New way to deploy
   - 1.3.2-1.3.1
     * Doc fix
   - 1.3.0
