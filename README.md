@@ -21,10 +21,12 @@ docker run -d --rm -e RABBITMQ_ENABLE_MANAGEMENT_PLUGIN=true -e RABBITMQ_USER=ad
 pip install -r requirements.txt
 
 # Import library
-sudo python setup.py install
+pip install amqp-broker
 ```
 
 ## VERSION
+  - 1.4.2:
+    * Updating documentation
   - 1.4.1:
     * Prepare repo for PyPi
   - 1.4:
