@@ -18,13 +18,12 @@ docker run -d --rm -e RABBITMQ_ENABLE_MANAGEMENT_PLUGIN=true -e RABBITMQ_USER=ad
 ## AMQP Client configuration
 
 ```bash
-pip install -r requirements.txt
-
-# Import library
 pip install amqp-broker
 ```
 
 ## VERSION
+  - 1.4.3:
+    * Add pika dependency in pip install
   - 1.4.2:
     * Updating documentation
   - 1.4.1:
